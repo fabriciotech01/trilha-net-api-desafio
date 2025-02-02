@@ -15,4 +15,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+     <Exec Command="cp $(OutDir)runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll $(OutDir)" />
+  </Target>
+
 </Project>
